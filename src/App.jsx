@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import CrashGame from "./CrashGame";
+import WheelieGame from "./WheelieGame";
+import Poker from "./Poker";
 import SlotMachine from "./SlotMachine";
-import Blackjack from "./Blackjack";
-import Roulette from "./Roulette";
+
+
 import Sports from "./Sports";
 
 const css = `
@@ -187,8 +189,8 @@ export default function BetLive(){
   const CASINO_GAMES=[
     {id:"crash",label:"🚀 Crash",color:"#ff3b5c"},
     {id:"slots",label:"🎰 Slots",color:"#f5c842"},
-    {id:"blackjack",label:"🃏 Blackjack",color:"#00e676"},
-    {id:"roulette",label:"🎡 Roulette",color:"#a78bfa"},
+    {id:"poker",label:"🃏 Poker",color:"#00e676"},
+    {id:"wheelie",label:"🏍️ Wheelie MX",color:"#ff9a3c"},
   ];
 
   return(
@@ -257,8 +259,8 @@ export default function BetLive(){
                 {id:"live",icon:"📡",name:"Paris Live",desc:"Parie sur de vraies caméras",color:"var(--accent)",bg:"rgba(0,229,255,0.08)"},
                 {id:"crash",icon:"🚀",name:"Crash Game",desc:"Le rocket qui monte",color:"#ff3b5c",bg:"rgba(255,59,92,0.08)"},
                 {id:"slots",icon:"🎰",name:"Slots",desc:"Machine à sous",color:"var(--gold)",bg:"rgba(245,200,66,0.08)"},
-                {id:"blackjack",icon:"🃏",name:"Blackjack",desc:"Bats le dealer",color:"#00e676",bg:"rgba(0,230,118,0.08)"},
-                {id:"roulette",icon:"🎡",name:"Roulette",desc:"Roulette européenne",color:"#a78bfa",bg:"rgba(167,139,250,0.08)"},
+                {id:"poker",icon:"🃏",name:"Poker",desc:"Texas Hold'em vs IA",color:"#00e676",bg:"rgba(0,230,118,0.08)"},
+                {id:"wheelie",icon:"🏍️",name:"Wheelie MX",desc:"Tiens le wheelie !",color:"#ff9a3c",bg:"rgba(255,154,60,0.08)"},
                 {id:"sports-football",icon:"⚽",name:"Football",desc:"Ligue 1, PL, UCL",color:"#00e676",bg:"rgba(0,230,118,0.08)"},
                 {id:"sports-basketball",icon:"🏀",name:"Basketball",desc:"NBA & EuroLeague",color:"#ff9a3c",bg:"rgba(255,154,60,0.08)"},
                 {id:"sports-esports",icon:"🎮",name:"eSports",desc:"CS2, LoL, Valorant",color:"#a78bfa",bg:"rgba(167,139,250,0.08)"},
@@ -309,8 +311,8 @@ export default function BetLive(){
             <div style={{minHeight:500}}>
               {casinoGame==="crash"&&<CrashGame coins={coins} setCoins={setCoins}/>}
               {casinoGame==="slots"&&<SlotMachine coins={coins} setCoins={setCoins}/>}
-              {casinoGame==="blackjack"&&<Blackjack coins={coins} setCoins={setCoins}/>}
-              {casinoGame==="roulette"&&<Roulette coins={coins} setCoins={setCoins}/>}
+              {casinoGame==="poker"&&<Poker coins={coins} setCoins={setCoins}/>}
+              {casinoGame==="wheelie"&&<WheelieGame coins={coins} setCoins={setCoins}/>}
             </div>
           </div>}
 
